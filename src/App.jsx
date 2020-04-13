@@ -1,6 +1,6 @@
-import React from 'react'
-import { BrowserRouter } from 'react-router-dom'
-import NavBar from './components/Navbar'
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route, } from 'react-router-dom';
+import NavBar from './components/Navbar';
 import Home from './views/Home';
 import Films from './views/Films';
 import People from './views/People';
@@ -10,18 +10,18 @@ import Peoplelist from './views/Peoplelist';
 
 const App = () => {
     return (
-        <BrowserRouter>
+        <Router>
         <NavBar />
             <Switch>
             <Route exact path="/" component={Home} />
-					<Route exact path="/films" component={Films} />
-					<Route exact path="/people" component={People} />
-					<Route exact path="/films/:id" component={Filmlist} />
-					<Route exact path="/people/:id" component={Peoplelist} />
+					<Route exact path="/Films" component={Films} />
+					<Route exact path="/People" component={People} />
+					<Route exact path="/Films/:name" component={Filmlist} />
+					<Route exact path="/People/:name" component={Peoplelist} />
 
             </Switch>
-        </BrowserRouter>
+        </Router>
     );
-};
+}
 
 export default App;
