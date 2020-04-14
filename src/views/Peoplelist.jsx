@@ -1,12 +1,12 @@
 import React from 'react';
-class Peoplelist extends Component {
+class Peoplelist extends React.Component {
     constructor(props) {
       super(props);
       this.state = { person: [] };
     }
   
     componentDidMount() {
-      fetch("https://ghibliapi.herokuapp.com/people/" + this.props.match.params.id)
+      fetch("https://ghibliapi.herokuapp.com/people/" + this.props.match.params.name)
         .then(result => result.json())
         .then(person => {
           this.setState({ person });

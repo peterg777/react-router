@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Films from '../components/FilmCard';
+import FilmCard from '../components/FilmCard';
 
-class Films extends Component {
+class Films extends React.Component {
 	constructor(props) {
 	  super(props);
 	  this.state = { films: [] };
@@ -18,9 +18,9 @@ class Films extends Component {
   
 	render() {
 	  return (
-		<Fragment>
-		  {this.state.films.map(films => <Films key={films.id} value={films} />)}
-		</Fragment>
+		<>
+		  {this.state.films.map(film => <FilmCard key={film.id} film={film} />)}
+		</>
 	  );
 	}
   }
